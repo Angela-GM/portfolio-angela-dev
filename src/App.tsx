@@ -1,10 +1,15 @@
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Index } from "./pages";
+import { NotFound } from "./pages/not-found";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
