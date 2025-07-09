@@ -1,0 +1,47 @@
+export const experiences = [
+  {
+    id: 1,
+    title: "Desarrolladora Frontend Senior",
+    company: "TechInnovate Solutions",
+    location: "Madrid, España",
+    period: "Enero 2022 - Presente",
+    description: [
+      "Lideré el desarrollo de interfaces de usuario para aplicaciones web complejas usando React y TypeScript",
+      "Implementé arquitecturas escalables que mejoraron el rendimiento en un 40%",
+      "Colaboré con equipos de diseño UX/UI para crear experiencias de usuario excepcionales",
+      "Mentoricé a desarrolladores junior y establecí mejores prácticas de código",
+    ],
+    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+    logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=80&h=80&q=80",
+  },
+  {
+    id: 2,
+    title: "Desarrolladora Fullstack",
+    company: "Digital Creative Agency",
+    location: "Barcelona, España",
+    period: "Marzo 2020 - Diciembre 2021",
+    description: [
+      "Desarrollé aplicaciones web completas desde el frontend hasta el backend",
+      "Creé APIs RESTful robustas y bases de datos optimizadas",
+      "Integré sistemas de pago y servicios de terceros",
+      "Participé en la planificación y arquitectura de proyectos",
+    ],
+    technologies: ["Vue.js", "Node.js", "Express", "MongoDB", "AWS"],
+    logo: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=80&h=80&q=80",
+  },
+  {
+    id: 3,
+    title: "Desarrolladora Frontend Junior",
+    company: "StartupLab",
+    location: "Valencia, España",
+    period: "Junio 2018 - Febrero 2020",
+    description: [
+      "Desarrollé componentes reutilizables y interfaces responsivas",
+      "Optimicé el rendimiento web y la experiencia de usuario",
+      "Participé en pruebas A/B y análisis de métricas de usuario",
+      "Colaboré en metodologías ágiles y scrum",
+    ],
+    technologies: ["JavaScript", "React", "SASS", "Git", "Figma"],
+    logo: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=80&h=80&q=80",
+  },
+];
