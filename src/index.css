@@ -1,31 +1,8 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-height: 100dvh;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  font-weight: 400;
-}
-h1,
-h2,
-h3,
-h4 {
-  text-wrap: balance;
-}
-
-p {
-  text-wrap: pretty;
-}
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
+/* Design Tokens */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -96,6 +73,7 @@ p {
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -105,15 +83,15 @@ p {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', sans-serif;
   }
 
   html {
@@ -123,20 +101,29 @@ p {
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-600 via-violet-600 to-purple-500 bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #8b3fb8, #7c3aed, #9b59b6);
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
   }
 
   .glass-card {
-    @apply backdrop-blur-lg bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10;
+    backdrop-filter: blur(16px); /* Equivalente a backdrop-blur-lg */
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem; /* opcional, si quieres mantener diseño */
+  }
+  .dark .glass-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .hover-lift {
+  /* .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
 
   .slide-in {
     @apply animate-[slideIn_0.6s_ease-out_forwards];
-  }
+  } */
 }
 
 @keyframes slideIn {
@@ -150,4 +137,26 @@ p {
   }
 }
 
+@layer utilities {
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
 
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+
+  .bg-card {
+    background-color: hsl(var(--card));
+  }
+
+  .text-card-foreground {
+    color: hsl(var(--card-foreground));
+  }
+
+  /* Agrega más si usas otras como: text-muted-foreground, bg-accent, etc. */
+}
