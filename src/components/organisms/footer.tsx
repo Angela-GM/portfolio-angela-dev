@@ -30,8 +30,8 @@ export const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-3xl font-bold gradient-text">SM</span>
-              <span className="ml-3 text-xl font-semibold">Sofia Martínez</span>
+              <span className="text-3xl font-bold gradient-text">AG·dev</span>
+              <span className="ml-3 text-xl font-semibold">Angela Garcia</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
               Desarrolladora Fullstack especializada en Frontend, creando 
@@ -108,7 +108,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Sofia Martínez. Todos los derechos reservados.
+              © {currentYear} Angela Garcia. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <button className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300">

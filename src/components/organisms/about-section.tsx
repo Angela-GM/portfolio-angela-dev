@@ -75,9 +75,9 @@ export const AboutSection = () => {
             style={{ animationDelay: "0.3s" }}
           >
             <div className="relative">
-              <div className="w-80 h-96 relative overflow-hidden rounded-2xl">
+              <div className="w-80 h-96 relative overflow-hidden rounded-2xl mix-blend-luminosity">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=500&q=80"
+                  src="/dev.jpg"
                   alt="Trabajando en proyectos"
                   className="w-full h-full object-cover"
                 />
@@ -88,11 +88,11 @@ export const AboutSection = () => {
               <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-xl p-4 shadow-xl">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-violet-500 rounded-lg flex items-center justify-center text-white font-bold">
-                    SF
+                    AG
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 dark:text-white">
-                      Sofia Martínez
+                      Angela Garcia
                     </p>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Frontend Developer

@@ -6,8 +6,7 @@ export const HeroSection: React.FC = () => {
   const roles = [
     "Desarrolladora Frontend",
     "Creadora de Experiencias",
-    "Full Stack Developer",
-    "UI/UX Enthusiast",
+    "FullStack Developer",
   ];
 
   useEffect(() => {
@@ -37,12 +36,12 @@ export const HeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl mt-12 sm:text-5xl lg:text-6xl lg:mt-0 font-bold mb-6">
               <span className="block text-gray-900 dark:text-white mb-2">
                 Hola, soy
               </span>
-              <span className="block bg-gradient-to-r from-purple-600 via-violet-600 to-purple-500 bg-clip-text text-transparent">
-                Sofia Martínez
+              <span className="block bg-gradient-to-r from-purple-600 via-violet-600 to-purple-500 bg-clip-text text-transparent pb-2">
+                Angela Garcia
               </span>
             </h1>
             
@@ -120,17 +119,17 @@ export const HeroSection: React.FC = () => {
                 <div className="absolute inset-4 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
                 
                 {/* Main image */}
-                <div className="absolute inset-8 bg-gradient-to-br from-purple-100 to-violet-100 dark:from-purple-900/20 dark:to-violet-900/20 rounded-full flex items-center justify-center">
+                <div className="absolute inset-8 bg-gradient-to-br from-purple-100 to-violet-100 dark:from-purple-900/20 dark:to-violet-900/20 rounded-full flex items-center justify-center mix-blend-multiply">
                   <img
-                    src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=400&h=400&q=80"
+                    src="/avatar-angela.jpg"
                     alt="Sofia Martínez"
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-cover rounded-full "
                   />
                 </div>
 
                 {/* Floating elements */}
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-purple-500 to-violet-500 rounded-lg flex items-center justify-center text-white font-bold text-xl animate-float" style={{ animationDelay: '0.5s' }}>
-                  💻
+                  🚀
                 </div>
                 <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xl animate-float" style={{ animationDelay: '1.5s' }}>
                   ✨
