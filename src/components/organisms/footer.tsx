@@ -30,7 +30,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-3xl font-bold gradient-text">AG·dev</span>
+              <span className="text-3xl font-bold gradient-text">AG</span>
               <span className="ml-3 text-xl font-semibold">Angela Garcia</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
