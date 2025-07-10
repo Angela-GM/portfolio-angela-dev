@@ -54,9 +54,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl leading-relaxed">
-              Transformo ideas en experiencias digitales excepcionales. 
-              Especializada en crear interfaces elegantes y funcionales 
-              que conectan con los usuarios y generan impacto.
+              Implemento interfaces web a partir de diseños, cuidando cada detalle del código y la arquitectura. Con experiencia en React, Next.js y Nest.js, desarrollo soluciones escalables que integran APIs, bases de datos y buenas prácticas de desarrollo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

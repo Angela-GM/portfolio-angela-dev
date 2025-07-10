@@ -16,7 +16,7 @@ export const AboutSection = () => {
             Sobre Mí
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Conoce mi historia, mi pasión por el desarrollo y lo que me motiva
+            Conoce mi historia, mi pasión por el desarrollo y lo que me impulsa
             cada día
           </p>
         </div>
@@ -25,46 +25,71 @@ export const AboutSection = () => {
           {/* Text Content */}
           <div className="animate-slide-in">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Mi Viaje en el Desarrollo
+              🚀 Mi Viaje en el Desarrollo
             </h3>
 
             <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
-                Mi pasión por la tecnología comenzó en la universidad, donde
-                descubrí el poder de transformar ideas en realidades digitales.
-                Lo que empezó como curiosidad se convirtió en una vocación.
+                Mi relación con la tecnología comenzó mucho antes de
+                especializarme como desarrolladora. A lo largo de los años, he
+                recorrido un camino diverso que me ha llevado desde la
+                informática técnica hasta el desarrollo Full Stack, pasando por
+                la gestión de productos digitales y la creación de soluciones
+                web completas.
               </p>
 
               <p>
-                Me especializo en desarrollo{" "}
+                Hoy, me especializo en desarrollo{" "}
                 <strong className="text-purple-600 dark:text-purple-400">
                   Frontend
-                </strong>
-                , pero mi experiencia Full Stack me permite crear soluciones
-                completas y cohesivas. Mi enfoque siempre está en la experiencia
-                del usuario y la calidad del código.
+                </strong>{" "}
+                con React y Next.js, pero mi experiencia{" "}
+                <strong className="text-purple-600 dark:text-purple-400">
+                  FullStack
+                </strong>{" "}
+                me permite abordar proyectos de forma integral: desde la
+                integración de APIs REST hasta la gestión de bases de datos y la
+                automatización de despliegues con Docker. Me apasiona construir
+                soluciones escalables, limpias y bien estructuradas, siempre con
+                foco en la calidad del código y la eficiencia del desarrollo. Me
+                especializo en desarrollo{" "}
               </p>
-
-              <p>
-                Cuando no estoy programando, me encontrarás explorando nuevas
-                tecnologías, contribuyendo a proyectos open source, o diseñando
-                interfaces que no solo funcionen perfectamente, sino que también
-                inspiren.
-              </p>
+           
             </div>
 
             <div className="mt-8 space-y-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                💡 Lo que me define
+              </h3>
               <div className="flex items-center text-gray-700 dark:text-gray-300">
                 <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                <span>Apasionada por el diseño centrado en el usuario</span>
+                <span>
+                  Apasionada por el desarrollo web y la mejora continua
+                </span>
               </div>
               <div className="flex items-center text-gray-700 dark:text-gray-300">
                 <span className="w-2 h-2 bg-violet-500 rounded-full mr-3"></span>
-                <span>Defensora del código limpio y mantenible</span>
+                <span>Defensora del código limpio, modular y mantenible</span>
               </div>
               <div className="flex items-center text-gray-700 dark:text-gray-300">
                 <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                <span>Siempre aprendiendo y evolucionando</span>
+                <span>
+                  Enfocada en la escalabilidad, la arquitectura y las buenas
+                  prácticas
+                </span>
+              </div>
+              <div className="flex items-center text-gray-700 dark:text-gray-300">
+                <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                <span>
+                  Comprometida con metodologías ágiles como Scrum y Kanban
+                </span>
+              </div>
+              <div className="flex items-center text-gray-700 dark:text-gray-300">
+                <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                <span>
+                  Curiosa por naturaleza: siempre explorando nuevas herramientas
+                  y tecnologías
+                </span>
               </div>
             </div>
           </div>
