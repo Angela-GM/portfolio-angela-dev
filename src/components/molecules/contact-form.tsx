@@ -4,10 +4,11 @@ import { CardContent } from "../atoms/card-content";
 import { Card } from "../atoms/card";
 import { CardHeader } from "../atoms/card-header";
 import { CardTitle } from "../atoms/card-title";
-import { API_URL } from "../../constants";
-
+import { sendContactForm } from "../../services/contactService";
 
 export const ContactForm = () => {
+  const [showModal, setShowModal] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,17 +16,14 @@ export const ContactForm = () => {
     message: "",
   });
 
-  const handleSubmit = async () => {
-    await fetch(`${API_URL}/contact`, {
-      method: 'POST',
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      })
-    })
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const response = await sendContactForm(formData);
+    console.log(response);
+    if (response) {
+      setShowModal(true);
+    }
   };
 
   const handleChange = (
@@ -140,6 +138,19 @@ export const ContactForm = () => {
         </Card>
       </div>
       {/* </div> */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-sm w-full text-center">
+            <h2 className="text-xl font-semibold mb-4">¡Mensaje enviado!</h2>
+            <p className="mb-6">
+              Gracias por contactarme. Te responderé pronto.
+            </p>
+            <Button onClick={() => setShowModal(false)} className="w-full">
+              Cerrar
+            </Button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
