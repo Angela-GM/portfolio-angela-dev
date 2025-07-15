@@ -4,6 +4,8 @@ import { CardContent } from "../atoms/card-content";
 import { Card } from "../atoms/card";
 import { CardHeader } from "../atoms/card-header";
 import { CardTitle } from "../atoms/card-title";
+import { API_URL } from "../../constants";
+
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -13,12 +15,17 @@ export const ContactForm = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí implementarías la lógica de envío del formulario
-    console.log("Form submitted:", formData);
-    alert("¡Mensaje enviado! Te responderé pronto.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+  const handleSubmit = async () => {
+    await fetch(`${API_URL}/contact`, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      })
+    })
   };
 
   const handleChange = (

@@ -11,9 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/api/contact", async (req: Request, res: Response) => {
-  const { name, email, message } = req.body;
+  const { name, email, subject, message } = req.body;
 
-  if (!name || !email || !message) {
+  if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: "Faltan campos obligatorios" });
   }
 
@@ -29,7 +29,7 @@ app.post("/api/contact", async (req: Request, res: Response) => {
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USER,
-      subject: `Nuevo mensaje de ${name}`,
+      subject: `🚀 Nuevo mensaje de ${name} - ${subject}`,
       text: message,
     });
 
