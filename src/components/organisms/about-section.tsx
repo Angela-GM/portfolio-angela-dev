@@ -3,10 +3,12 @@ import { CardContent } from "../atoms/card-content";
 
 export const AboutSection = () => {
   const stats = [
-    { number: "3+", label: "Años de Experiencia" },
-    { number: "25+", label: "Proyectos Completados" },
-    { number: "100%", label: "Satisfacción Cliente" },
-    { number: "24/7", label: "Pasión por el Código" },
+{ number: "Eficiencia", label: "en la implementación de soluciones robustas y bien estructuradas" },
+{ number: "Escalabilidad", label: "como base de todos los productos que desarrollo" },
+{ number: "Arquitectura", label: "limpia, modular y sostenible en cada línea de código" },
+{ number: "Compromiso", label: "con estándares de calidad y mejora continua del proceso técnico" }
+
+
   ];
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900/50">
@@ -51,8 +53,7 @@ export const AboutSection = () => {
                 integración de APIs REST hasta la gestión de bases de datos y la
                 automatización de despliegues con Docker. Me apasiona construir
                 soluciones escalables, limpias y bien estructuradas, siempre con
-                foco en la calidad del código y la eficiencia del desarrollo. Me
-                especializo en desarrollo{" "}
+                foco en la calidad del código y la eficiencia del desarrollo.
               </p>
            
             </div>

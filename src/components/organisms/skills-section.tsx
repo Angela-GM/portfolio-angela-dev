@@ -73,12 +73,12 @@ export const SkillsSection = () => {
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                 La tecnología evoluciona constantemente, y yo evoluciono con ella. 
-                Actualmente estoy profundizando en <strong className="text-purple-600 dark:text-purple-400">Web3</strong>, 
-                <strong className="text-purple-600 dark:text-purple-400"> AI/ML integrations</strong>, y 
+                Actualmente estoy profundizando en <strong className="text-purple-600 dark:text-purple-400">Node.js</strong>, 
+                <strong className="text-purple-600 dark:text-purple-400"> Next.js</strong>, y 
                 <strong className="text-purple-600 dark:text-purple-400"> Advanced React Patterns</strong>.
               </p>
               
-              <div className="flex justify-center space-x-8">
+              {/* <div className="flex justify-center space-x-8">
                 <div className="text-center">
                   <div className="text-2xl font-bold gradient-text">50+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Tecnologías</div>
@@ -91,7 +91,7 @@ export const SkillsSection = () => {
                   <div className="text-2xl font-bold gradient-text">5+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Certificaciones</div>
                 </div>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         </div>

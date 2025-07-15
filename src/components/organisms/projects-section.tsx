@@ -151,7 +151,7 @@ export const ProjectsSection = () => {
           <Button
             size="lg"
             className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white"
-            onClick={() => window.open('https://github.com', '_blank')}
+            onClick={() => window.open('https://github.com/Angela-GM', '_blank')}
           >
             Ver GitHub Completo
             <span className="ml-2">→</span>
