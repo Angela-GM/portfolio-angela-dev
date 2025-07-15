@@ -20,10 +20,15 @@ export const ContactForm = () => {
     e.preventDefault();
 
     const response = await sendContactForm(formData);
-    console.log(response);
     if (response) {
       setShowModal(true);
     }
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   const handleChange = (
