@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# Proyecto de Portafolio - Ángela Dev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un portafolio personal diseñado para mostrar mis habilidades y proyectos desarrollados como desarrolladora de software. El portafolio está construido utilizando tecnologías modernas que garantizan una experiencia de usuario fluida y rápida.
 
-Currently, two official plugins are available:
+## Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Para la construcción de la interfaz de usuario, proporcionando componentes reutilizables y eficientes.
+- **TypeScript**: Añadiendo tipado estático para mejorar la robustez del código y la facilidad de mantenimiento.
+- **Vite**: Para una configuración de desarrollo rápida y eficiente, con recarga en tiempo real (HMR).
 
-## Expanding the ESLint configuration
+## Características del Proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Diseño Responsivo**: La aplicación está diseñada para funcionar bien en dispositivos de todos los tamaños.
+- **Optimización del Rendimiento**: Implementando lazily loading y división de código para mejorar los tiempos de carga.
+- **Accesibilidad**: Cumplimiento con las mejores prácticas para garantizar que la aplicación sea accesible para todos los usuarios.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Instalación y Configuración
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/angela-dev/portfolio-angela-dev.git
+   ```
+2. Navega al directorio del proyecto:
+   ```bash
+   cd portfolio-angela-dev
+   ```
+3. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+4. Inicia el entorno de desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Servidor para Formulario de Contacto
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Este proyecto incluye un servidor Express para manejar envíos de formularios de contacto. El servidor utiliza Nodemailer para enviar correos electrónicos.
+
+### Configuración del Servidor
+
+1. Navega al directorio del servidor:
+   ```bash
+   cd server
+   ```
+2. Crea un archivo `.env` y define las siguientes variables:
+   ```env
+   EMAIL_USER=tu_correo@gmail.com
+   EMAIL_PASS=tu_contraseña
+   PORT=5000
+   ```
+3. Instala las dependencias del servidor:
+   ```bash
+   npm install
+   ```
+4. Inicia el servidor:
+   ```bash
+   npm start
+   ```
+
+El servidor está configurado para escuchar en `/api/contact` para envíos de formularios y envía un correo a través de Gmail.
+
+## Contacto
+
+Si estás interesado en trabajar conmigo o tienes alguna pregunta, no dudes en contactarme:
+
+- **Email:** angela.dev@example.com
+- **LinkedIn:** [linkedin.com/in/angela-dev](https://linkedin.com/in/angela-dev)
+
+Espero que encuentres este portafolio interesante y que refleje mi pasión y habilidad en el desarrollo de software.
