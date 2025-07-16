@@ -11,8 +11,7 @@ export const ContactSection = () => {
             Contacto
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            ¿Tienes un proyecto en mente? ¡Hablemos! Me encanta colaborar en
-            ideas innovadoras y crear experiencias digitales excepcionales.
+            Siempre interesada en entornos que valoren el desarrollo limpio, escalable y el trabajo en equipo. Busco continuar creciendo profesionalmente, explorando nuevos retos con propósito.
           </p>
         </div>
 
@@ -61,15 +60,15 @@ export const ContactSection = () => {
               <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>Respuesta rápida en menos de 24 horas</span>
+                  <span>Compromiso real con el trabajo en equipo</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-violet-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>Enfoque colaborativo y comunicación transparente</span>
+                  <span>Adaptabilidad y aprendizaje constante</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>Soluciones personalizadas para cada proyecto</span>
+                  <span>Mentalidad orientada a soluciones</span>
                 </li>
               </ul>
             </Card>

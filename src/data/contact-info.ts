@@ -14,7 +14,7 @@ export const contactInfo = [
   {
     icon: '/icon-ubication.svg',
     title: "Ubicación",
-    value: "Tarragon, España",
+    value: "Tarragona, España",
     link: null,
   },
 ];

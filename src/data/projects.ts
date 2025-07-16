@@ -57,18 +57,18 @@ export const projects = [
     tags: ["Next.js", "MongoDB", "Stripe", "Socket.io"],
     demoUrl: "#",
     codeUrl: "#",
-    featured: true,
-  },
-  {
-    id: 6,
-    title: "Recipe Finder",
-    description:
-      "Buscador de recetas con filtros avanzados, lista de favoritos, y generador automático de lista de compras.",
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&h=400&q=80",
-    tags: ["React Native", "Redux", "API REST", "SQLite"],
-    demoUrl: "#",
-    codeUrl: "#",
     featured: false,
   },
+  // {
+  //   id: 6,
+  //   title: "Recipe Finder",
+  //   description:
+  //     "Buscador de recetas con filtros avanzados, lista de favoritos, y generador automático de lista de compras.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&h=400&q=80",
+  //   tags: ["React Native", "Redux", "API REST", "SQLite"],
+  //   demoUrl: "#",
+  //   codeUrl: "#",
+  //   featured: false,
+  // },
 ];
