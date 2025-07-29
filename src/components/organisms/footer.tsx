@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -134,12 +136,12 @@ export const Footer = () => {
               © {currentYear} Angela Garcia. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <button className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300">
+              <Link to={"/privacity"} target="_blank" className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300">
                 Política de Privacidad
-              </button>
-              <button className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300">
+              </Link>
+              <Link to={"/terms"} className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300">
                 Términos de Uso
-              </button>
+              </Link>
             </div>
           </div>
         </div>
