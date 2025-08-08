@@ -61,18 +61,19 @@ app.post("/api/chat", async (req, res) => {
         ],
       }),
     });
-    const result = await response.json();
+
+    if (!response.ok) {
+      const errorData = await response.text();
+      console.error("Error de OpenAI:", errorData);
+      return res.status(500).json({ error: "Error al generar respuesta con OpenAI" });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send("Error al conectar con la API de OpenAI");
   }
 });
 
-app.listen(3001, () => {
-  console.log("Servidor listo en http://localhost:3001");
-});
-
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en puerto ${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

@@ -1,5 +1,6 @@
 import { Navigation } from "../components/molecules/navigation";
 import { AboutSection } from "../components/organisms/about-section";
+import { Chatbot } from "../components/organisms/chatbot";
 import { ContactSection } from "../components/organisms/contact-section";
 import { ExperienceSection } from "../components/organisms/experience-section";
 import { Footer } from "../components/organisms/footer";
@@ -18,6 +19,7 @@ export const IndexPage = () => {
       <ExperienceSection />
       <ContactSection />
       <Footer />
+      <Chatbot />
     </div>
   );
 };

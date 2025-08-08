@@ -1,0 +1,88 @@
+ANGELA GARCIA - Fullstack Developer
+🏡 Tarragona
+✉ angelagm0112@gmail.com
+📞 696 753 758
+🔗 LinkedIn
+🔗 GitHub
+
+Sobre mí
+Desarrolladora Fullstack con experiencia en frontend y backend utilizando React, Next.js, Node.js, Nest.js y TypeScript.
+Enfocada en aplicaciones web escalables y de alto rendimiento, integración de APIs REST, bases de datos SQL/NoSQL (MySQL, PostgreSQL, MongoDB), y despliegues con Docker y Bitbucket Pipelines.
+Familiarizada con metodologías ágiles (Scrum), arquitectura limpia, componentes reutilizables, Clean Code y SOLID.
+
+Educación
+2023
+Factoría F5 - Bootcamp Fullstack
+850h en JavaScript, TypeScript, React, Next.js, Nest.js, SQL y NoSQL.
+
+2023
+Ironhack Spain - Bootcamp Frontend
+240h en Vue3.js, CSS, APIs REST, SQL y NoSQL, JavaScript.
+
+2022
+CIFO L'Hospitalet - Diseño UX/UI
+330h en diseño UX/UI, prototipado y accesibilidad.
+
+2004
+IES Campclar - Técnico en Explotación de Sistemas Informáticos
+
+Experiencia Profesional
+Enero 2024 - Actualidad
+Grupo Mayo - Desarrolladora Frontend / Fullstack
+
+Desarrollo de aplicaciones con Next.js y React, optimizando rendimiento y escalabilidad.
+
+Creación de interfaces desde Figma con TailwindCSS, Atomic Design y accesibilidad.
+
+Integración con APIs REST, backend con MongoDB y MySQL.
+
+Creación y mantenimiento de SDKs en npm.
+
+Uso de Bitbucket y Pipelines para CI/CD.
+
+Docker en entornos de desarrollo y producción.
+
+Gestión de tareas con Jira bajo Scrum.
+
+2023
+Work in Tech - Desarrolladora FullStack (freelance)
+
+Desarrollo de aplicación de gestión de becas con React.js y Nest.js.
+
+Backend con PostgreSQL y Swagger.
+
+Validación de formularios con Formik y Yup.
+
+2018 - 2022
+Social Rockets - Administrativa y Gestión Web
+
+Gestión y mantenimiento de webs en WordPress para ventas de productos digitales.
+
+Tramitación y gestión de pedidos con precisión.
+
+Skills Técnicas
+Lenguajes:
+JavaScript (ES6+), TypeScript
+
+Frontend:
+React, Next.js, TailwindCSS, Styled Components
+
+Backend:
+Node.js, Nest.js, API REST, Express
+
+Bases de Datos:
+MySQL (TypeORM), PostgreSQL, MongoDB (Mongoose)
+
+DevOps & Herramientas:
+Git, Bitbucket, Docker, Pipelines, Postman, Swagger, GitHub, VSCode
+
+Metodologías:
+Scrum, Jira, Clean Code, SOLID, MVC, Atomic Design
+
+Testing:
+TDD (Jest, Vitest)
+
+Idiomas
+Español: Nativo
+Catalán: Bilingüe
+Inglés: Básico
