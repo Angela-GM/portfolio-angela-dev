@@ -17,7 +17,7 @@ export const Navigation = () => {
   const navItems = [
     { name: "Inicio", href: "#hero" },
     { name: "Sobre mí", href: "#about" },
-    { name: "Proyectos", href: "#projects" },
+    // { name: "Proyectos", href: "#projects" },
     { name: "Habilidades", href: "#skills" },
     { name: "Experiencia", href: "#experience" },
     { name: "Contacto", href: "#contact" },
