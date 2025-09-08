@@ -91,40 +91,41 @@ export const Footer = () => {
               </a>
             </div>
           </div>
+          <section className="justify-between md:col-span-2 grid grid-cols-2 gap-8">
+            {/* Navigation Links */}
+            <div>
+              <h3 className="font-semibold text-white mb-4">Navegación</h3>
+              <ul className="space-y-2">
+                {footerLinks.navegacion.map((link) => (
+                  <li key={link.name}>
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-left"
+                    >
+                      {link.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Navigation Links */}
-          <div>
-            <h3 className="font-semibold text-white mb-4">Navegación</h3>
-            <ul className="space-y-2">
-              {footerLinks.navegacion.map((link) => (
-                <li key={link.name}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-left"
-                  >
-                    {link.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Links */}
-          <div>
-            <h3 className="font-semibold text-white mb-4">Contacto</h3>
-            <ul className="space-y-2">
-              {footerLinks.contacto.map((link) => (
-                <li key={link.name}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-left"
-                  >
-                    {link.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Contact Links */}
+            <div>
+              <h3 className="font-semibold text-white mb-4">Contacto</h3>
+              <ul className="space-y-2">
+                {footerLinks.contacto.map((link) => (
+                  <li key={link.name}>
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-left"
+                    >
+                      {link.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
         </div>
 
         {/* Bottom Section */}

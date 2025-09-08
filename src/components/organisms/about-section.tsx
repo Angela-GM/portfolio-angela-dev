@@ -139,7 +139,7 @@ export const AboutSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold gradient-text mb-2">
+                <div className="text-md sm:text-xl lg:text-2xl xl:text-3xl font-bold gradient-text mb-2">
                   {stat.number}
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">
