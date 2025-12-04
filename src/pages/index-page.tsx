@@ -5,7 +5,7 @@ import { ContactSection } from "../components/organisms/contact-section";
 import { ExperienceSection } from "../components/organisms/experience-section";
 import { Footer } from "../components/organisms/footer";
 import { HeroSection } from "../components/organisms/hero-section";
-import { ProjectsSection } from "../components/organisms/projects-section";
+// import { ProjectsSection } from "../components/organisms/projects-section";
 import { SkillsSection } from "../components/organisms/skills-section";
 
 export const IndexPage = () => {
@@ -14,7 +14,7 @@ export const IndexPage = () => {
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
       <SkillsSection />
       <ExperienceSection />
       <ContactSection />

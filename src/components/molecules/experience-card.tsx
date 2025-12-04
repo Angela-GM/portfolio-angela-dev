@@ -38,7 +38,7 @@ export const ExperienceCard = ({ experience, index }: ExperienceCardProps) => {
           </div>
 
           {/* Experience Details */}
-          <div className="flex-1 p-6 lg:p-8">
+          <div className="flex-1 p-3 md:p-6 lg:p-8">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
               <div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
