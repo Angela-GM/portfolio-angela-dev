@@ -9,6 +9,8 @@ export interface SkillCategory {
 // Order in which the levels are shown inside each card.
 export const SKILL_LEVELS: SkillLevel[] = ["Uso diario", "Con experiencia", "Aprendiendo"];
 
+// "Uso diario": what the current projects (Bookloop, The Closer, freelance work)
+// are built with. "Con experiencia": used in previous jobs, per the CV.
 export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend y diseño",
@@ -16,22 +18,25 @@ export const skillCategories: SkillCategory[] = [
     skills: {
       "Uso diario": [
         "React",
-        "Next.js",
+        "Next.js (App Router)",
         "TypeScript",
-        "JavaScript",
+        "JavaScript (ES6+)",
         "HTML5 / CSS3",
         "Tailwind CSS",
+        "Atomic Design",
         "Responsive Design",
       ],
       "Con experiencia": [
-        "Atomic Design",
-        "Design Systems",
-        "UI/UX",
-        "Animaciones",
+        "Figma",
+        "UI/UX y prototipado",
         "Accesibilidad",
-        "Vue.js",
-        "SCSS / Sass",
+        "Design Systems",
+        "Formik + Yup",
+        "Redux",
+        "React Query",
         "Styled Components",
+        "Vue.js",
+        "React Native",
       ],
     },
   },
@@ -39,20 +44,30 @@ export const skillCategories: SkillCategory[] = [
     title: "Backend y bases de datos",
     icon: "⚙️",
     skills: {
-      "Uso diario": ["APIs REST"],
-      "Con experiencia": [
+      "Uso diario": [
         "Node.js",
         "PostgreSQL",
-        "Supabase (Auth, RLS, Realtime)",
+        "SQL",
+        "Supabase (Auth, RLS, Realtime, RPC)",
+        "Next.js API Routes y Server Actions",
+        "APIs REST",
+        "Cron jobs",
+        "Zod",
+      ],
+      "Con experiencia": [
         "NestJS",
         "Express",
-        "MySQL",
-        "MongoDB",
+        "MySQL (TypeORM)",
+        "MongoDB (Mongoose)",
+        "Prisma",
+        "JWT / Passport",
+        "Swagger",
+        "SDKs publicados en npm",
       ],
     },
   },
   {
-    title: "IA, pagos e integraciones",
+    title: "IA e integraciones",
     icon: "✨",
     skills: {
       "Uso diario": ["Claude / Claude Code", "Gentle AI"],
@@ -70,19 +85,32 @@ export const skillCategories: SkillCategory[] = [
     title: "DevOps y herramientas",
     icon: "🛠️",
     skills: {
-      "Uso diario": ["Git / GitHub", "Bitbucket", "VS Code"],
+      "Uso diario": ["Git / GitHub", "Vercel", "GitHub Actions", "VS Code"],
       "Con experiencia": [
-        "Vercel",
-        "GitHub Actions",
-        "CI/CD",
         "Docker",
+        "Bitbucket y Pipelines (CI/CD)",
         "Render",
-        "Vite",
-        "Vitest / Jest",
         "Postman",
-        "Figma",
+        "Vite",
       ],
       Aprendiendo: ["AWS"],
+    },
+  },
+  {
+    title: "Testing y metodologías",
+    icon: "✅",
+    skills: {
+      "Uso diario": ["Clean Code", "SOLID"],
+      "Con experiencia": [
+        "TDD",
+        "Jest",
+        "Vitest",
+        "Node test runner",
+        "Scrum",
+        "Kanban",
+        "Jira",
+        "MVC",
+      ],
     },
   },
 ];

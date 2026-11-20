@@ -32,7 +32,13 @@ export const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <Card
               key={category.title}
-              className="glass-card hover-lift animate-fade-in"
+              className={`glass-card hover-lift animate-fade-in ${
+                // An odd last card takes the full row instead of leaving a gap.
+                skillCategories.length % 2 === 1 &&
+                categoryIndex === skillCategories.length - 1
+                  ? "lg:col-span-2"
+                  : ""
+              }`}
               style={{ animationDelay: `${categoryIndex * 0.2}s` }}
             >
               <CardContent className="p-8">
