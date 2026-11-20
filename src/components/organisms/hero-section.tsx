@@ -155,8 +155,11 @@ export const HeroSection: React.FC = () => {
                 {/* Main image */}
                 <div className="absolute inset-8 bg-gradient-to-br from-purple-100 to-violet-100 dark:from-purple-900/20 dark:to-violet-900/20 rounded-full flex items-center justify-center mix-blend-multiply">
                   <img
-                    src="/avatar-angela.jpg"
+                    src="/avatar-angela.webp"
                     alt="Angela Garcia"
+                    width={560}
+                    height={560}
+                    fetchPriority="high"
                     className="w-full h-full object-cover rounded-full "
                   />
                 </div>

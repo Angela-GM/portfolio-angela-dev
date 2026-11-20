@@ -32,7 +32,10 @@ export const ProjectsSection = () => {
                   <img
                     src={project.image}
                     alt={`Vista de ${project.title}`}
+                    width={1200}
+                    height={630}
                     loading="lazy"
+                    decoding="async"
                     className="w-full aspect-[40/21] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

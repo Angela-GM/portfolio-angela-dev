@@ -103,8 +103,12 @@ export const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-96 relative overflow-hidden rounded-2xl mix-blend-luminosity">
                 <img
-                  src="/dev.jpg"
+                  src="/dev.webp"
                   alt="Trabajando en proyectos"
+                  width={640}
+                  height={768}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
