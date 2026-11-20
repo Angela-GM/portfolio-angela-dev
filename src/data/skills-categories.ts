@@ -55,6 +55,7 @@ export const skillCategories: SkillCategory[] = [
     title: "IA, pagos e integraciones",
     icon: "✨",
     skills: {
+      "Uso diario": ["Claude / Claude Code", "Gentle AI"],
       "Con experiencia": [
         "Gemini",
         "OpenAI API",
