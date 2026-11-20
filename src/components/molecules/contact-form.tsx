@@ -1,34 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Loader2 } from "lucide-react";
 import { Button } from "../atoms/button";
 import { CardContent } from "../atoms/card-content";
 import { Card } from "../atoms/card";
 import { CardHeader } from "../atoms/card-header";
 import { CardTitle } from "../atoms/card-title";
-import { sendContactForm } from "../../services/contactService";
+import {
+  sendContactForm,
+  wakeUpContactApi,
+  type ContactFormData,
+} from "../../services/contactService";
+
+const EMPTY_FORM: ContactFormData = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+
+type FormStatus = "idle" | "sending" | "error";
 
 export const ContactForm = () => {
   const [showModal, setShowModal] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [formData, setFormData] = useState<ContactFormData>(EMPTY_FORM);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  useEffect(() => {
+    wakeUpContactApi();
+  }, []);
+
+  const isSending = status === "sending";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSending) return;
 
-    const response = await sendContactForm(formData);
-    if (response) {
+    setStatus("sending");
+    try {
+      await sendContactForm(formData);
+      setFormData(EMPTY_FORM);
+      setStatus("idle");
       setShowModal(true);
+    } catch (error) {
+      console.error(error);
+      // Keep what the user wrote so they can retry.
+      setStatus("error");
     }
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
   };
 
   const handleChange = (
@@ -41,7 +58,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="">
+    <div>
       {/* Contact Form */}
       <div
         className="lg:col-span-2 animate-slide-in"
@@ -134,10 +151,40 @@ export const ContactForm = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white py-3 text-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                disabled={isSending}
+                aria-busy={isSending}
+                className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white py-3 text-lg font-semibold transform enabled:hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-wait"
               >
-                Enviar Mensaje
+                {isSending ? (
+                  <>
+                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                    Enviando...
+                  </>
+                ) : (
+                  "Enviar Mensaje"
+                )}
               </Button>
+
+              <div aria-live="polite" className="text-sm text-center">
+                {isSending && (
+                  <p className="text-gray-500 dark:text-gray-400">
+                    Puede tardar unos segundos la primera vez.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-red-600 dark:text-red-400">
+                    No se ha podido enviar el mensaje. Inténtalo de nuevo o
+                    escríbeme a{" "}
+                    <a
+                      href="mailto:angelagm0112@gmail.com"
+                      className="underline font-medium"
+                    >
+                      angelagm0112@gmail.com
+                    </a>
+                    .
+                  </p>
+                )}
+              </div>
             </form>
           </CardContent>
         </Card>
@@ -156,6 +203,6 @@ export const ContactForm = () => {
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 };

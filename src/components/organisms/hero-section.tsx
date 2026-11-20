@@ -117,7 +117,7 @@ export const HeroSection: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="mailto:sofia@example.com"
+                href="mailto:angelagm0112@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
@@ -156,7 +156,7 @@ export const HeroSection: React.FC = () => {
                 <div className="absolute inset-8 bg-gradient-to-br from-purple-100 to-violet-100 dark:from-purple-900/20 dark:to-violet-900/20 rounded-full flex items-center justify-center mix-blend-multiply">
                   <img
                     src="/avatar-angela.jpg"
-                    alt="Sofia Martínez"
+                    alt="Angela Garcia"
                     className="w-full h-full object-cover rounded-full "
                   />
                 </div>

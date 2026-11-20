@@ -7,8 +7,19 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+// Comma-separated list, e.g. "https://my-portfolio.com,http://localhost:5173".
+// If it's not set, any origin is allowed (previous behaviour).
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+app.use(cors(allowedOrigins?.length ? { origin: allowedOrigins } : undefined));
 app.use(express.json());
+
+// Used by the frontend to wake the server up (Render free tier sleeps).
+app.get("/api/health", (_req: Request, res: Response) => {
+  res.status(200).json({ status: "ok" });
+});
 
 app.post("/api/contact", async (req: Request, res: Response) => {
   const { name, email, subject, message } = req.body;
@@ -27,7 +38,10 @@ app.post("/api/contact", async (req: Request, res: Response) => {
     });
 
     await transporter.sendMail({
-      from: email,
+      // Gmail ignores a "from" outside the authenticated account, so we send
+      // from it and use replyTo to answer the visitor directly.
+      from: `"Portfolio" <${process.env.EMAIL_USER}>`,
+      replyTo: `"${name}" <${email}>`,
       to: process.env.EMAIL_USER,
       subject: `🚀 Nuevo mensaje de ${name} - ${subject} - ${email}`,
       text: message,

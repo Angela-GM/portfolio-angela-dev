@@ -17,7 +17,7 @@ export const Navigation = () => {
   const navItems = [
     { name: "Inicio", href: "#hero" },
     { name: "Sobre mí", href: "#about" },
-    // { name: "Proyectos", href: "#projects" },
+    { name: "Proyectos", href: "#projects" },
     { name: "Habilidades", href: "#skills" },
     { name: "Experiencia", href: "#experience" },
     { name: "Contacto", href: "#contact" },
@@ -119,15 +119,27 @@ export const Navigation = () => {
           }`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg rounded-lg mt-2">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 w-full text-left"
-              >
-                {item.name}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.href.startsWith("#") ? (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 w-full text-left"
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  download
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 w-full text-left"
+                >
+                  {item.name}
+                </a>
+              )
+            )}
           </div>
         </div>
       </div>

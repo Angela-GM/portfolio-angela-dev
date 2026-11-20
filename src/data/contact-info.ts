@@ -6,12 +6,6 @@ export const contactInfo = [
     link: "mailto:angelagm0112@gmail.com",
   },
   {
-    icon: '/icon-phone.svg',
-    title: "Teléfono",
-    value: "+34 696 753 758",
-    link: "tel:+34696753758",
-  },
-  {
     icon: '/icon-ubication.svg',
     title: "Ubicación",
     value: "Tarragona, España",
