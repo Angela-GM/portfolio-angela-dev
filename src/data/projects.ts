@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Páginas pensadas para SEO con ISR y JSON-LD, buscador que tolera erratas y acentos, y una ingesta diaria automatizada con GitHub Actions y Vercel Cron.",
       "PostgreSQL en Supabase con RLS y un rol de solo lectura para la web; tests sin red con respuestas grabadas.",
     ],
-    image: "/projects/bookloop.png",
+    image: "/projects/bookloop.webp",
     tags: [
       "Next.js 16",
       "React 19",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
       "Panel en tiempo real con Supabase Realtime: cuando el cliente acepta, el estado cambia al instante sin recargar.",
       "Suscripciones y packs de créditos con Stripe Checkout y webhooks.",
     ],
-    image: "/projects/the-closer.png",
+    image: "/projects/the-closer.webp",
     tags: [
       "Next.js 16",
       "React 19",
