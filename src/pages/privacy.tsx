@@ -21,7 +21,7 @@ const Section = ({
 
 export const Privacy = () => {
   useEffect(() => {
-    document.title = "Política de privacidad | Angela Garcia";
+    document.title = "Política de privacidad · Angela Garcia";
     window.scrollTo(0, 0);
   }, []);
 
