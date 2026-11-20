@@ -1,64 +1,116 @@
-export const skillCategories = [
+export type SkillLevel = "Uso diario" | "Con experiencia" | "Aprendiendo";
+
+export interface SkillCategory {
+  title: string;
+  icon: string;
+  skills: Partial<Record<SkillLevel, string[]>>;
+}
+
+// Order in which the levels are shown inside each card.
+export const SKILL_LEVELS: SkillLevel[] = ["Uso diario", "Con experiencia", "Aprendiendo"];
+
+// "Uso diario": what the current projects (Bookloop, The Closer, freelance work)
+// are built with. "Con experiencia": used in previous jobs, per the CV.
+export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Development",
+    title: "Frontend y diseño",
     icon: "🎨",
-    skills: [
-      { name: "HTML5/CSS3", level: 98 },
-      { name: "JavaScript", level: 95 },
-      { name: "React", level: 95 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Next.js", level: 90 },
-      { name: "Vue.js", level: 50 },
-      { name: "SCSS/Sass", level: 50 },
-      { name: "Styled Components", level: 50 },
-    ],
-    color: "from-purple-500 to-violet-500",
+    skills: {
+      "Uso diario": [
+        "React",
+        "Next.js (App Router)",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "HTML5 / CSS3",
+        "Tailwind CSS",
+        "Atomic Design",
+        "Responsive Design",
+      ],
+      "Con experiencia": [
+        "Figma",
+        "UI/UX y prototipado",
+        "Accesibilidad",
+        "Design Systems",
+        "Formik + Yup",
+        "Redux",
+        "React Query",
+        "Styled Components",
+        "Vue.js",
+        "React Native",
+      ],
+    },
   },
   {
-    title: "Backend Development",
+    title: "Backend y bases de datos",
     icon: "⚙️",
-    skills: [
-      { name: "RESTful APIs", level: 90 },
-      { name: "MySql", level: 80 },
-      { name: "Node.js", level: 75 },
-      { name: "MongoDB", level: 75 },
-      { name: "PostgreSQL", level: 65 },
-      { name: "Nest.js", level: 55 },
-      { name: "Express.js", level: 50 },
-      // { name: "GraphQL", level: 70 },
-      // { name: "Firebase", level: 85 },
-    ],
-    color: "from-blue-500 to-cyan-500",
+    skills: {
+      "Uso diario": [
+        "Node.js",
+        "PostgreSQL",
+        "SQL",
+        "Supabase (Auth, RLS, Realtime, RPC)",
+        "Next.js API Routes y Server Actions",
+        "APIs REST",
+        "Cron jobs",
+        "Zod",
+      ],
+      "Con experiencia": [
+        "NestJS",
+        "Express",
+        "MySQL (TypeORM)",
+        "MongoDB (Mongoose)",
+        "Prisma",
+        "JWT / Passport",
+        "Swagger",
+        "SDKs publicados en npm",
+      ],
+    },
   },
   {
-    title: "Tools & Technologies",
-    icon: "🛠️",
-    skills: [
-      { name: "Git/GitHub", level: 95 },
-      { name: "Bitbucket", level: 95 },
-      { name: "VSCode", level: 85 },
-      { name: "Vite", level: 80 },
-      { name: "Docker", level: 75 },
-      { name: "Pipelines", level: 65 },
-      { name: "CI/CD", level: 55 },
-      { name: "Postman", level: 75 },
-      { name: "Vitest", level: 60 },
-      { name: "Figma", level: 50 },
-      { name: "AWS", level: 20 },
-    ],
-    color: "from-green-500 to-teal-500",
-  },
-  {
-    title: "Design & UX",
+    title: "IA e integraciones",
     icon: "✨",
-    skills: [
-      { name: "Responsive Design", level: 95 },
-      { name: "Design Systems", level: 82 },
-      { name: "UI/UX Design", level: 70 },
-      { name: "Animation", level: 65 },
-      { name: "Accessibility", level: 50 },
-    ],
-    color: "from-pink-500 to-rose-500",
+    skills: {
+      "Uso diario": ["Claude / Claude Code", "Gentle AI"],
+      "Con experiencia": [
+        "Gemini",
+        "OpenAI API",
+        "Embeddings y pgvector",
+        "Stripe (suscripciones y webhooks)",
+        "Resend",
+        "SEO técnico (ISR, JSON-LD)",
+      ],
+    },
+  },
+  {
+    title: "DevOps y herramientas",
+    icon: "🛠️",
+    skills: {
+      "Uso diario": ["Git / GitHub", "Vercel", "GitHub Actions", "VS Code"],
+      "Con experiencia": [
+        "Docker",
+        "Bitbucket y Pipelines (CI/CD)",
+        "Render",
+        "Postman",
+        "Vite",
+      ],
+      Aprendiendo: ["AWS"],
+    },
+  },
+  {
+    title: "Testing y metodologías",
+    icon: "✅",
+    skills: {
+      "Uso diario": ["Clean Code", "SOLID"],
+      "Con experiencia": [
+        "TDD",
+        "Jest",
+        "Vitest",
+        "Node test runner",
+        "Scrum",
+        "Kanban",
+        "Jira",
+        "MVC",
+      ],
+    },
   },
 ];

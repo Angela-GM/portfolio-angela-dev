@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "../atoms/button";
 import { CardContent } from "../atoms/card-content";
 import { Card } from "../atoms/card";
@@ -185,6 +186,18 @@ export const ContactForm = () => {
                   </p>
                 )}
               </div>
+
+              <p className="text-xs text-center text-gray-500 dark:text-gray-400">
+                Al enviar el formulario aceptas que use tus datos para
+                responderte, según la{" "}
+                <Link
+                  to="/privacidad"
+                  className="underline hover:text-purple-600 dark:hover:text-purple-400"
+                >
+                  política de privacidad
+                </Link>
+                .
+              </p>
             </form>
           </CardContent>
         </Card>

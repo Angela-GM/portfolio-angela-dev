@@ -1,7 +1,19 @@
-import { skillCategories } from "../../data/skills-categories"
-import { Card } from "../atoms/card"
-import { CardContent } from "../atoms/card-content"
+import {
+  SKILL_LEVELS,
+  skillCategories,
+  type SkillLevel,
+} from "../../data/skills-categories";
+import { Card } from "../atoms/card";
+import { CardContent } from "../atoms/card-content";
 
+const chipClasses: Record<SkillLevel, string> = {
+  "Uso diario":
+    "bg-purple-600 text-white dark:bg-purple-500",
+  "Con experiencia":
+    "bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-200",
+  Aprendiendo:
+    "border border-dashed border-purple-400 text-purple-700 dark:text-purple-300",
+};
 
 export const SkillsSection = () => {
   return (
@@ -12,52 +24,53 @@ export const SkillsSection = () => {
             Habilidades Técnicas
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Un conjunto completo de tecnologías y herramientas que domino para 
-            crear soluciones digitales excepcionales
+            Las tecnologías con las que trabajo, agrupadas por cuánto las uso
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <Card 
-              key={category.title} 
-              className="glass-card hover-lift animate-fade-in" 
+            <Card
+              key={category.title}
+              className={`glass-card hover-lift animate-fade-in ${
+                // An odd last card takes the full row instead of leaving a gap.
+                skillCategories.length % 2 === 1 &&
+                categoryIndex === skillCategories.length - 1
+                  ? "lg:col-span-2"
+                  : ""
+              }`}
               style={{ animationDelay: `${categoryIndex * 0.2}s` }}
             >
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="text-3xl mr-4">{category.icon}</div>
+                  <div className="text-3xl mr-4" aria-hidden="true">
+                    {category.icon}
+                  </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                     {category.title}
                   </h3>
                 </div>
 
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div 
-                      key={skill.name}
-                      className="animate-slide-in"
-                      style={{ animationDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1)}s` }}
-                    >
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">
-                          {skill.level}%
-                        </span>
+                <div className="space-y-5">
+                  {SKILL_LEVELS.filter((level) => category.skills[level]?.length).map(
+                    (level) => (
+                      <div key={level}>
+                        <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
+                          {level}
+                        </h4>
+                        <ul className="flex flex-wrap gap-2">
+                          {category.skills[level]!.map((skill) => (
+                            <li
+                              key={skill}
+                              className={`px-3 py-1 text-sm font-medium rounded-full ${chipClasses[level]}`}
+                            >
+                              {skill}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <div
-                          className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
-                          style={{ 
-                            width: `${skill.level}%`,
-                            animationDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1) + 0.5}s`
-                          }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
+                    )
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -71,31 +84,26 @@ export const SkillsSection = () => {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 Siempre Aprendiendo
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                La tecnología evoluciona constantemente, y yo evoluciono con ella. 
-                Actualmente estoy profundizando en <strong className="text-purple-600 dark:text-purple-400">Node.js</strong>, 
-                <strong className="text-purple-600 dark:text-purple-400"> Next.js</strong>, y 
-                <strong className="text-purple-600 dark:text-purple-400"> Advanced React Patterns</strong>.
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Ahora mismo estoy profundizando en{" "}
+                <strong className="text-purple-600 dark:text-purple-400">
+                  IA aplicada a producto
+                </strong>{" "}
+                (que el modelo explique decisiones tomadas por el código, con
+                salvaguardas y control de coste),{" "}
+                <strong className="text-purple-600 dark:text-purple-400">
+                  SEO técnico
+                </strong>{" "}
+                y{" "}
+                <strong className="text-purple-600 dark:text-purple-400">
+                  AWS
+                </strong>
+                .
               </p>
-              
-              {/* <div className="flex justify-center space-x-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold gradient-text">50+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Tecnologías</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold gradient-text">100+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Horas/Mes Aprendiendo</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold gradient-text">5+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Certificaciones</div>
-                </div>
-              </div> */}
             </CardContent>
           </Card>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

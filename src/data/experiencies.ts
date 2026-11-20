@@ -1,10 +1,39 @@
-export const experiences = [
+import type { Experience } from "../interfaces/experience";
+
+export const experiences: Experience[] = [
+  {
+    id: 4,
+    title: "Desarrolladora Full Stack",
+    company: "Freelance",
+    location: "Tarragona, España (Remoto)",
+    period: "Mayo 2026 - Actualidad",
+    description: [
+      "Colaboro a diario con Open Room desde julio de 2026.",
+      "Sigo colaborando con Grupo Mayo tras finalizar mi etapa en plantilla.",
+      "Bookloop (bookloop.es): diseñé y desarrollé de principio a fin una web para elegir tu próximo libro, con un coach de lectura con IA, una ingesta diaria automatizada del catálogo y páginas pensadas para SEO.",
+      "The Closer (thecloserapp.es): plataforma B2B de seguimiento de presupuestos con recordatorios automáticos por email, panel en tiempo real y suscripciones con Stripe.",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Stripe",
+      "Resend",
+      "Gemini",
+      "Vercel",
+      "GitHub Actions",
+      "Tailwind CSS",
+    ],
+    logo: "/freelance.jpg",
+  },
   {
     id: 1,
     title: "Desarrolladora Frontend",
     company: "Grupo Mayo",
     location: "Barcelona, España (Remoto)",
-    period: "Enero 2024 - Actualidad",
+    period: "Enero 2024 - Mayo 2026",
     description: [
       "Desarrollé y mantuve aplicaciones web utilizando Next.js, React y Tailwind CSS.",
       "Implementé TypeScript para mejorar la robustez del código y facilitar su mantenimiento.",
@@ -22,7 +51,6 @@ export const experiences = [
       "Next.js",
       "React",
       "TypeScript",
-      "Next.js",
       "Tailwind CSS",
       "Docker",
       "Postman",
