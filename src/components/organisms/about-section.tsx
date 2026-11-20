@@ -47,13 +47,13 @@ export const AboutSection = () => {
                 </strong>{" "}
                 con React y Next.js, pero mi experiencia{" "}
                 <strong className="text-purple-600 dark:text-purple-400">
-                  FullStack
+                  Full Stack
                 </strong>{" "}
                 me permite abordar proyectos de forma integral: desde la
                 integración de APIs REST hasta la gestión de bases de datos y la
-                automatización de despliegues con Docker. Me apasiona construir
-                soluciones escalables, limpias y bien estructuradas, siempre con
-                foco en la calidad del código y la eficiencia del desarrollo.
+                automatización de despliegues. Lo que más disfruto es crear
+                productos completos, como Bookloop y The Closer, cuidando la
+                calidad del código y la experiencia de quien los usa.
               </p>
            
             </div>
@@ -121,7 +121,7 @@ export const AboutSection = () => {
                       Angela Garcia
                     </p>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Frontend Developer
+                      Frontend · Full Stack
                     </p>
                   </div>
                 </div>

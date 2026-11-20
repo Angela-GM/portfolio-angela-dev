@@ -38,9 +38,8 @@ export const Footer = () => {
               <span className="ml-3 text-xl font-semibold">Angela Garcia</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              Desarrolladora Fullstack especializada en Frontend, creando
-              experiencias digitales excepcionales que conectan con los usuarios
-              y generan impacto real.
+              Desarrolladora Frontend · Full Stack. Construyo productos web de
+              principio a fin, con el foco en el frontend.
             </p>
             <div className="flex space-x-4">
               <a

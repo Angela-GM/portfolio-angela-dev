@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { Button } from "../atoms/button";
 
+const ROLES = [
+  "Desarrolladora Frontend",
+  "Full Stack con Next.js y Supabase",
+  "Creadora de productos",
+];
+
 export const HeroSection: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
-  const roles = [
-    "Desarrolladora Frontend",
-    "Creadora de Experiencias",
-    "FullStack Developer",
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
+      setCurrentRole((prev) => (prev + 1) % ROLES.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -57,16 +58,15 @@ export const HeroSection: React.FC = () => {
             <div className="h-16 mb-6">
               <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 font-medium">
                 <span className="inline-block transition-all duration-500 ease-in-out">
-                  {roles[currentRole]}
+                  {ROLES[currentRole]}
                 </span>
               </p>
             </div>
 
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl leading-relaxed">
-              Implemento interfaces web a partir de diseños, cuidando cada
-              detalle del código y la arquitectura. Con experiencia en React,
-              Next.js y Nest.js, desarrollo soluciones escalables que integran
-              APIs, bases de datos y buenas prácticas de desarrollo.
+              Construyo productos web de principio a fin, con el foco en el
+              frontend: interfaces cuidadas, rápidas y fáciles de usar,
+              apoyadas en un backend sólido.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
