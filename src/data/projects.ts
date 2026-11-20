@@ -1,74 +1,63 @@
-export const projects = [
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  highlights: string[];
+  image: string;
+  tags: string[];
+  demoUrl?: string;
+  codeUrl?: string;
+}
+
+export const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Dashboard",
+    title: "Bookloop",
     description:
-      "Dashboard administrativo moderno para gestión de tienda online con analytics en tiempo real y gestión de inventario.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&h=400&q=80",
-    tags: ["React", "TypeScript", "Tailwind", "Node.js"],
-    demoUrl: "#",
-    codeUrl: "#",
-    featured: true,
+      "Web para encontrar tu próximo libro en español con Tilo, un búho lector: fichas de obras, libros parecidos, sagas en orden de lectura, guías temáticas y un coach de lectura con IA. Producto propio, de la idea a producción.",
+    highlights: [
+      "Pipeline de datos que ingesta libros por ISBN desde OpenLibrary, los contrasta con una segunda fuente y decide si publicarlos o mandarlos a una cola de revisión.",
+      "Coach de lectura con IA: el libro se elige con lógica propia sobre el catálogo y el modelo solo redacta la explicación, con salvaguardas y un límite de coste por sesión.",
+      "Páginas pensadas para SEO con ISR y JSON-LD, buscador que tolera erratas y acentos, y una ingesta diaria automatizada con GitHub Actions y Vercel Cron.",
+      "PostgreSQL en Supabase con RLS y un rol de solo lectura para la web; tests sin red con respuestas grabadas.",
+    ],
+    image: "/projects/bookloop.png",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "Supabase",
+      "Gemini",
+      "Vercel",
+      "GitHub Actions",
+      "SEO",
+    ],
+    demoUrl: "https://bookloop.es",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "The Closer",
     description:
-      "Aplicación de gestión de tareas con funcionalidades colaborativas, drag & drop, y sincronización en tiempo real.",
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=600&h=400&q=80",
-    tags: ["Vue.js", "Firebase", "SCSS", "PWA"],
-    demoUrl: "#",
-    codeUrl: "#",
-    featured: true,
+      "Plataforma B2B para enviar presupuestos y hacer su seguimiento. El cliente final ve y acepta el presupuesto desde un enlace, y la app le recuerda automáticamente los que siguen pendientes para que no se pierdan ventas por falta de seguimiento.",
+    highlights: [
+      "Seguimiento automático: un cron diario envía correos de recordatorio a los 3 y 7 días con Resend.",
+      "Aceptación pública segura: lectura y cambio de estado centralizados en funciones PostgreSQL (RPC SECURITY DEFINER) con RLS en todas las tablas.",
+      "Panel en tiempo real con Supabase Realtime: cuando el cliente acepta, el estado cambia al instante sin recargar.",
+      "Suscripciones y packs de créditos con Stripe Checkout y webhooks.",
+    ],
+    image: "/projects/the-closer.png",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Resend",
+      "Stripe",
+      "Tailwind CSS",
+      "Atomic Design",
+    ],
+    demoUrl: "https://thecloserapp.es",
   },
-  {
-    id: 3,
-    title: "Weather Forecast",
-    description:
-      "Aplicación del clima con diseño elegante, geolocalización, y pronósticos detallados con visualizaciones interactivas.",
-    image:
-      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=600&h=400&q=80",
-    tags: ["React", "API Integration", "Charts.js", "CSS3"],
-    demoUrl: "#",
-    codeUrl: "#",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Portfolio Creative",
-    description:
-      "Portfolio interactivo para artista digital con galería dinámica, animaciones CSS y optimización de rendimiento.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=400&q=80",
-    tags: ["HTML5", "CSS3", "JavaScript", "GSAP"],
-    demoUrl: "#",
-    codeUrl: "#",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Learning Platform",
-    description:
-      "Plataforma educativa con sistema de cursos, quizzes interactivos, y seguimiento de progreso personalizado.",
-    image:
-      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&h=400&q=80",
-    tags: ["Next.js", "MongoDB", "Stripe", "Socket.io"],
-    demoUrl: "#",
-    codeUrl: "#",
-    featured: false,
-  },
-  // {
-  //   id: 6,
-  //   title: "Recipe Finder",
-  //   description:
-  //     "Buscador de recetas con filtros avanzados, lista de favoritos, y generador automático de lista de compras.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&h=400&q=80",
-  //   tags: ["React Native", "Redux", "API REST", "SQLite"],
-  //   demoUrl: "#",
-  //   codeUrl: "#",
-  //   featured: false,
-  // },
 ];

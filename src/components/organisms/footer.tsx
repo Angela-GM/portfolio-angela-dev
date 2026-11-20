@@ -15,7 +15,6 @@ export const Footer = () => {
         href: "https://www.linkedin.com/in/angela-garcia-mu/",
       },
       { name: "GitHub", href: "https://github.com/Angela-GM" },
-      { name: "Teléfono", href: "tel:+34696753758" },
     ],
   };
 
@@ -71,7 +70,7 @@ export const Footer = () => {
                 </svg>
               </a>
               <a
-                href="mailto:sofia@example.com"
+                href="mailto:angelagm0112@gmail.com"
                 className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
                 aria-label="Email"
               >
