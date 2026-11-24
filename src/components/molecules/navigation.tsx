@@ -33,7 +33,7 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-white/20 dark:border-gray-800/20"
+          ? "bg-background/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-white/20 dark:border-gray-800/20"
           : "bg-transparent"
       }`}
     >
@@ -120,7 +120,7 @@ export const Navigation = () => {
               : "max-h-0 opacity-0 overflow-hidden"
           }`}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg rounded-lg mt-2">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/90 dark:bg-gray-900/90 backdrop-blur-lg rounded-lg mt-2">
             {navItems.map((item) =>
               item.href.startsWith("#") ? (
                 <button

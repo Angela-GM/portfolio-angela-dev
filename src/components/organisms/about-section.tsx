@@ -11,7 +11,7 @@ export const AboutSection = () => {
 
   ];
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900/50">
+    <section id="about" className="py-20 bg-section dark:bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-4">
@@ -115,7 +115,7 @@ export const AboutSection = () => {
               </div>
 
               {/* Floating card */}
-              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-xl p-4 shadow-xl">
+              <div className="absolute -bottom-6 -right-6 bg-card dark:bg-gray-800 rounded-xl p-4 shadow-xl">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-violet-500 rounded-lg flex items-center justify-center text-white font-bold">
                     AG

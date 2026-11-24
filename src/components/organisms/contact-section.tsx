@@ -4,7 +4,7 @@ import { ContactForm } from "../molecules/contact-form";
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900/50">
+    <section id="contact" className="py-20 bg-section dark:bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 via-violet-600 to-purple-500 bg-clip-text text-transparent mb-4">
@@ -26,7 +26,7 @@ export const ContactSection = () => {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-white/50 dark:hover:bg-gray-800/50 transition-colors duration-200"
+                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-card/70 dark:hover:bg-gray-800/50 transition-colors duration-200"
                 >
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-violet-500 rounded-lg flex items-center justify-center text-white">
                     <img src={info.icon} alt={info.title} className="w-6 h-6" />
