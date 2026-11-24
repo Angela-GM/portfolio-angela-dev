@@ -9,10 +9,10 @@
     <meta name="author" content="Angela Garcia" />
 
     <!-- seo:start — replaced per page by scripts/prerender.mjs -->
-    <title>Angela Garcia · Desarrolladora Frontend · Full Stack</title>
+    <title>Angela Garcia · Desarrolladora Frontend · Full Stack en Tarragona</title>
     <meta
       name="description"
-      content="Angela Garcia, desarrolladora Frontend · Full Stack. Construyo productos web de principio a fin, con el foco en el frontend."
+      content="Angela Garcia, desarrolladora Frontend · Full Stack en Tarragona, en remoto. Construyo productos web de principio a fin, con el foco en el frontend."
     />
     <!-- seo:end -->
 
@@ -31,11 +31,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Loaded without blocking the first paint; text shows in the fallback font until Inter arrives. -->
     <link
+      id="font-inter"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
     />
+    <!-- Switches the font stylesheet to "all" once loaded (instead of an
+         onload="" attribute, which the Content Security Policy would block). -->
+    <script>
+      (function () {
+        var l = document.getElementById("font-inter");
+        var on = function () { l.media = "all"; };
+        if (l.sheet) on(); else l.addEventListener("load", on);
+      })();
+    </script>
     <noscript>
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
