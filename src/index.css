@@ -6,13 +6,15 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Light theme avoids pure white, which is harsh on the eyes. */
+    --background: 255 20% 95%;
+    --section: 255 18% 92%;
     --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
+    --card: 255 25% 98%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
+    --popover: 255 25% 98%;
     --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 271 81% 56%;
@@ -48,6 +50,7 @@
 
   .dark {
     --background: 222.2 84% 4.9%;
+    --section: 222.2 47% 9%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
