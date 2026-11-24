@@ -21,7 +21,7 @@ export const Navigation = () => {
     { name: "Habilidades", href: "#skills" },
     { name: "Experiencia", href: "#experience" },
     { name: "Contacto", href: "#contact" },
-    { name: "CV", href: "/cv-angela-garcia-fullstack-developer-2025.pdf" },
+    { name: "CV", href: "/cv-angela-garcia-frontend-fullstack-2026.pdf" },
   ];
 
   const scrollToSection = (href: string) => {
