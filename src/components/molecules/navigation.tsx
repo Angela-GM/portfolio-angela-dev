@@ -84,6 +84,8 @@ export const Navigation = () => {
               size="sm"
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMobileMenuOpen}
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
                 <span

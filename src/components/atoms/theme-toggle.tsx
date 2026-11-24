@@ -31,6 +31,7 @@ export const ThemeToggle = () => {
       variant="ghost"
       size="sm"
       onClick={toggleTheme}
+      aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
       className="relative w-10 h-10 rounded-full hover:bg-purple-100 dark:hover:bg-purple-900/20"
     >
       <div className="relative w-5 h-5">
