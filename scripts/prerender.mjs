@@ -4,6 +4,7 @@
 // sitemap.xml, robots.txt and llms.txt from the same data the page shows.
 //
 // Runs after `vite build` (client) and `vite build --ssr` (dist-ssr/).
+import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -15,6 +16,10 @@ const ssrDir = join(root, "dist-ssr");
 // Canonical address of the site. Change it here (or with SITE_URL) if the
 // portfolio moves to its own domain.
 const SITE = (process.env.SITE_URL || "https://portfolio-angela-dev.vercel.app").replace(/\/$/, "");
+// Origin of the contact form API (Render). Allowed in the CSP connect-src.
+const API_ORIGIN = new URL(
+  process.env.VITE_API_URL || "https://portfolio-angela-dev.onrender.com/api"
+).origin;
 // Google Search Console ownership tag (URL-prefix property), set in Vercel.
 const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION || "";
 
@@ -38,7 +43,7 @@ const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const dailySkills = skillCategories.flatMap((c) => c.skills["Uso diario"] ?? []);
 
-const homeDescription = `${PERSON.name}, desarrolladora Frontend · Full Stack en ${PERSON.city}. Construyo productos web de principio a fin con React, Next.js y Supabase, como Bookloop y The Closer.`;
+const homeDescription = `${PERSON.name}, desarrolladora Frontend · Full Stack en ${PERSON.city} (España), disponible en remoto. Construyo productos web de principio a fin con React, Next.js y Supabase, como Bookloop y The Closer.`;
 
 const personId = `${SITE}/#person`;
 const homeJsonLd = {
@@ -101,7 +106,7 @@ const pages = [
   {
     url: "/",
     out: "index.html",
-    title: `${PERSON.name} · ${PERSON.jobTitle}`,
+    title: `${PERSON.name} · ${PERSON.jobTitle} en ${PERSON.city}`,
     description: homeDescription,
     canonical: `${SITE}/`,
     jsonLd: homeJsonLd,
@@ -161,8 +166,35 @@ if (!seoBlock.test(template) || !template.includes("<!--app-html-->")) {
   throw new Error("index.html no tiene los marcadores seo:start/seo:end o <!--app-html-->");
 }
 
+// Content Security Policy for each page, as a <meta> so the hashes always
+// match the inline scripts actually shipped (theme and font loader). JSON-LD
+// blocks are data, not code, so they don't need a hash. frame-ancestors can't
+// go in a <meta>; it is sent as a header from vercel.json.
+function cspFor(html) {
+  const hashes = [...html.matchAll(/<script(?![^>]*\bsrc=)(?![^>]*application\/ld\+json)[^>]*>([\s\S]*?)<\/script>/g)]
+    .map(([, code]) => `'sha256-${createHash("sha256").update(code).digest("base64")}'`);
+  return [
+    "default-src 'self'",
+    `script-src 'self' ${hashes.join(" ")}`,
+    // 'unsafe-inline' for styles only: the prerendered HTML carries style="" attributes.
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' data:",
+    `connect-src 'self' ${API_ORIGIN}`,
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "upgrade-insecure-requests",
+  ].join("; ");
+}
+
 for (const page of pages) {
-  const html = template.replace(seoBlock, headFor(page)).replace("<!--app-html-->", render(page.url));
+  let html = template.replace(seoBlock, headFor(page)).replace("<!--app-html-->", render(page.url));
+  html = html.replace(
+    "<head>",
+    `<head>
+    <meta http-equiv="Content-Security-Policy" content="${cspFor(html)}" />`
+  );
   const file = join(dist, page.out);
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, html);
