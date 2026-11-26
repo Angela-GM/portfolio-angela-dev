@@ -43,7 +43,7 @@ const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const dailySkills = skillCategories.flatMap((c) => c.skills["Uso diario"] ?? []);
 
-const homeDescription = `${PERSON.name}, desarrolladora Frontend · Full Stack en ${PERSON.city} (España), disponible en remoto. Construyo productos web de principio a fin con React, Next.js y Supabase, como Bookloop y The Closer.`;
+const homeDescription = `${PERSON.name}, desarrolladora Frontend · Full Stack en ${PERSON.city} (España), disponible en remoto. Construyo productos web de principio a fin con React, Next.js y Supabase, como Bookloop, The Closer y Agent Team.`;
 
 const personId = `${SITE}/#person`;
 const homeJsonLd = {

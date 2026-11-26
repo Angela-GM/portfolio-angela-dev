@@ -60,4 +60,30 @@ export const projects: Project[] = [
     ],
     demoUrl: "https://thecloserapp.es",
   },
+  {
+    id: 3,
+    title: "Agent Team",
+    description:
+      "Equipo de tres agentes de IA que trabajan juntos sobre una web: el Orquestador divide la petición en tareas, Develop escribe el código y Testing lo revisa y lo devuelve si falla, hasta que todo pasa. En pantalla se ve en directo qué hace cada agente y en qué estado está cada tarea.",
+    highlights: [
+      "Bucle Develop ↔ Testing con un tope de 5 intentos por tarea, para que un rechazo infinito no agote la cuota del modelo; solo el código aprobado entra en la web.",
+      "Testing combina comprobaciones automáticas sin IA (estructura HTML, enlaces rotos, etiquetas de formularios, sintaxis de JavaScript) con una revisión del modelo contra los criterios de aceptación.",
+      "Ejecución paso a paso guardada en Supabase, para no superar el límite de tiempo de Vercel y poder retomar el trabajo si se cierra la pestaña; panel en tiempo real con Supabase Realtime.",
+      "Coste cero: Gemini en plan gratuito con varios modelos en cadena y Groq de respaldo, RLS en todas las tablas y la vista previa en un iframe aislado de la sesión.",
+    ],
+    image: "/projects/agent-team.webp",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Gemini",
+      "Agentes de IA",
+      "Tailwind CSS",
+      "Vercel",
+    ],
+    demoUrl: "https://agent-team-drab.vercel.app",
+    codeUrl: "https://github.com/Angela-GM/agent-team",
+  },
 ];
